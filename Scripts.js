@@ -81,12 +81,11 @@ document.addEventListener('DOMContentLoaded', function() { /* wait until page lo
       return new Date(parseInt(year), parseInt(month) + 1, 0).getDate();
     }
     
-    const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     today = new Date();
     dd = String(today.getDate()).padStart(2, '0');
     mm = String(today.getMonth() + 1).padStart(2, '0');
     yyyy = today.getFullYear();
-    wd = days.indexOf(String(today).substr(0,3));
+    wd = today.getDay();
     offset = wd+1-(dd%7);
     prevmm = daysInMonth(mm-2,yyyy);
   
